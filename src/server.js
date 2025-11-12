@@ -6,7 +6,7 @@ import { and, eq } from "drizzle-orm";
 import job from "./cron.js";
 
 const app = express();
-const PORT = ENV.PORT || 5001;
+const PORT = process.env.PORT || ENV.PORT || 5001;
 
 if (ENV.NODE_ENV === "production") job.start();
 
